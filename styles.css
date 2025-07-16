@@ -398,6 +398,20 @@ header.scrolled {
     padding: 20px;
 }
 
+@media (max-width: 500px) {
+  .about-image img[src="homem.png"] {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: auto;
+    max-width: 60vw;
+  }
+  .about-image {
+    min-width: unset;
+    padding: 10px;
+  }
+}
+
 
 /* Seção Equipe */
 .team-grid {
