@@ -33,12 +33,12 @@ const translations = {
         // Projects section
         "projects_title": "Nossos Projetos",
         "project1_highlight": "Destaque",
-        "project1_title": "Residencial Horizonte",
-        "project1_desc": "Complexo residencial sustentável com áreas verdes integradas e tecnologia de ponta para eficiência energética e conforto.",
-        "project2_title": "Centro Empresarial Nova Era",
-        "project2_desc": "Espaço corporativo moderno com certificação LEED e eficiência energética, projetado para produtividade e bem-estar.",
-        "project3_title": "Parque Urbano Integrado",
-        "project3_desc": "Revitalização de área urbana com foco em mobilidade sustentável e espaços de convivência para a comunidade.",
+        "project1_title": "Site Drakkarboats",
+        "project1_desc": "Desenvolvimento de site para a empresa Drakkarboats, com visual moderno e funcionalidades otimizadas para o usuário.",
+        "project2_title": "Sistema Drakkarboats",
+        "project2_desc": "Sistema de gestão para a Drakkarboats, com estoque, vendas, orçamentos, ordens de pós-venda, painel administrativo e relatórios.",
+        "project3_title": "Site PierFans",
+        "project3_desc": "Desenvolvimento de site para a empresa PierFans, com foco em vendas de conteúdos adultos.",
         
         // Testimonials section
         "testimonials_title": "Depoimentos",
@@ -70,6 +70,8 @@ const translations = {
         "form_subject": "Assunto",
         "form_message": "Mensagem",
         "form_submit": "Enviar Mensagem",
+        "project_view": "Ver Projeto",
+        "access_denied": "Acesso negado: este projeto é restrito.",
         
         // Footer
         "footer_about": "A Synapse é uma empresa especializada em soluções tecnológicas baseadas em Inteligência Artificial, focada em inovação e excelência em todos os projetos.",
@@ -119,12 +121,12 @@ const translations = {
         // Projects section
         "projects_title": "Nuestros Proyectos",
         "project1_highlight": "Destacado",
-        "project1_title": "Residencial Horizonte",
-        "project1_desc": "Complejo residencial sostenible con áreas verdes integradas y tecnología de punta para eficiencia energética y confort.",
-        "project2_title": "Centro Empresarial Nueva Era",
-        "project2_desc": "Espacio corporativo moderno con certificación LEED y eficiencia energética, diseñado para productividad y bienestar.",
-        "project3_title": "Parque Urbano Integrado",
-        "project3_desc": "Revitalización de área urbana con enfoque en movilidad sostenible y espacios de convivencia para la comunidad.",
+        "project1_title": "Sitio Drakkarboats",
+        "project1_desc": "Desarrollo de sitio web para la empresa Drakkarboats, con diseño moderno y funcionalidades optimizadas para el usuario.",
+        "project2_title": "Sistema Drakkarboats",
+        "project2_desc": "Sistema de gestión para Drakkarboats, con stock, ventas, presupuestos, órdenes de posventa, panel administrativo e informes.",
+        "project3_title": "Sitio PierFans",
+        "project3_desc": "Desarrollo de sitio web para la empresa PierFans, con enfoque en la venta de contenidos para adultos.",
         
         // Testimonials section
         "testimonials_title": "Testimonios",
@@ -156,6 +158,8 @@ const translations = {
         "form_subject": "Asunto",
         "form_message": "Mensaje",
         "form_submit": "Enviar Mensaje",
+        "project_view": "Ver Proyecto",
+        "access_denied": "Acceso denegado: este proyecto es restringido.",
         
         // Footer
         "footer_about": "Synapse es una empresa especializada en soluciones tecnológicas basadas en Inteligencia Artificial, enfocada en innovación y excelencia en todos los proyectos.",
@@ -205,12 +209,12 @@ const translations = {
         // Projects section
         "projects_title": "Our Projects",
         "project1_highlight": "Featured",
-        "project1_title": "Horizonte Residential",
-        "project1_desc": "Sustainable residential complex with integrated green areas and cutting-edge technology for energy efficiency and comfort.",
-        "project2_title": "New Era Business Center",
-        "project2_desc": "Modern corporate space with LEED certification and energy efficiency, designed for productivity and well-being.",
-        "project3_title": "Integrated Urban Park",
-        "project3_desc": "Revitalization of urban area with a focus on sustainable mobility and community living spaces.",
+        "project1_title": "Drakkarboats Website",
+        "project1_desc": "Website development for Drakkarboats, with a modern design and user-optimized features.",
+        "project2_title": "Drakkarboats System",
+        "project2_desc": "Management system for Drakkarboats featuring inventory, sales, quotations, after-sales orders, admin dashboard, and reports.",
+        "project3_title": "PierFans Website",
+        "project3_desc": "Website development for PierFans, focused on selling adult content.",
         
         // Testimonials section
         "testimonials_title": "Testimonials",
@@ -242,6 +246,8 @@ const translations = {
         "form_subject": "Subject",
         "form_message": "Message",
         "form_submit": "Send Message",
+        "project_view": "View Project",
+        "access_denied": "Access denied: this project is restricted.",
         
         // Footer
         "footer_about": "Synapse is a company specialized in technological solutions based on Artificial Intelligence, focused on innovation and excellence in all projects.",
@@ -259,8 +265,12 @@ const translations = {
     }
 };
 
+// Expose translations globally for other scripts
+window.translations = translations;
+
 // Default language
 let currentLanguage = 'pt';
+window.currentLanguage = currentLanguage;
 
 // Function to translate the page
 function translatePage(lang) {
@@ -270,6 +280,7 @@ function translatePage(lang) {
     }
     
     currentLanguage = lang;
+    window.currentLanguage = lang;
     
     // Store the selected language in localStorage
     localStorage.setItem('selectedLanguage', lang);
