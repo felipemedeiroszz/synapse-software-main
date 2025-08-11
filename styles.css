@@ -14,6 +14,86 @@
     --glow-spread: 15px;
 }
 
+/* Layout container refinement */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section titles spacing and rhythm */
+.section-title {
+    margin-bottom: 28px;
+    letter-spacing: 0.2px;
+}
+
+/* Form inputs and textarea */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    background: #ffffff;
+    color: var(--dark-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9aa3ae;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(0, 102, 204, 0.5);
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+}
+
+.form-group input:invalid,
+.form-group textarea:invalid {
+    border-color: rgba(220, 38, 38, 0.5);
+}
+
+/* Submit button styling */
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0, 102, 204, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 32px rgba(0, 102, 204, 0.35);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 18px rgba(0, 102, 204, 0.3);
+}
+
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Link hover polish */
+.footer-links a:hover,
+.nav-menu a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -62,15 +142,33 @@ header.scrolled {
 
 .top-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 24px;
     position: relative;
+}
+
+/* Pequeno logo à esquerda no cabeçalho */
+.logo-left {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo-left img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 30px;
+}
+
+/* Empurra as bandeiras para a direita em telas grandes */
+.flags-container {
+    margin-left: auto;
 }
 
 /* Hamburger Menu Styles */
@@ -137,6 +235,7 @@ header.scrolled {
         position: absolute;
         top: 5px;
         right: 1px;
+        margin-left: 0; /* reseta o empurrão no mobile */
     }
 }
 
@@ -784,6 +883,163 @@ author-info p {
     }
 }
 
+/* Accessibility: focus-visible outlines for interactive elements */
+:root {
+    --focus-ring: 2px solid rgba(0, 102, 204, 0.6);
+    --focus-ring-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+.project-btn:focus-visible,
+.whatsapp-float:focus-visible,
+.testimonial-btn:focus-visible,
+.nav-menu a:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+    border-radius: 6px;
+}
+
+/* Project buttons */
+.project-actions {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+/* Floating WhatsApp button */
+.whatsapp-float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 24px rgba(0, 102, 204, 0.35);
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    animation: pulseWhats 2s ease-in-out infinite;
+}
+
+.whatsapp-float i {
+    font-size: 26px;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 14px 30px rgba(0, 102, 204, 0.45);
+    background: linear-gradient(45deg, #005ab8, var(--secondary-color));
+}
+
+@keyframes pulseWhats {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(0, 102, 204, 0); }
+}
+
+/* Smaller WhatsApp button on small screens */
+@media (max-width: 480px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        right: 16px;
+        bottom: 16px;
+    }
+    .whatsapp-float i { font-size: 24px; }
+}
+
+/* Header shadow on scroll */
+header.scrolled {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    backdrop-filter: saturate(1.2) blur(6px);
+}
+
+/* Reduced motion: limit animations for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .project-card:hover { transform: none !important; }
+    .project-btn:hover { transform: none !important; }
+    .whatsapp-float { animation: none !important; }
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-btn:hover {
+    transform: translateY(-1px);
+    background: #005ab8; /* slightly darker */
+    box-shadow: 0 12px 28px rgba(0, 102, 204, 0.35);
+}
+
+.project-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.25);
+}
+
+/* Disabled state */
+.project-btn.disabled,
+.project-btn[aria-disabled="true"] {
+    background: #b9c3cf;
+    color: #ffffff;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.project-btn.disabled:hover,
+.project-btn[aria-disabled="true"]:hover,
+.project-btn.disabled:active,
+.project-btn[aria-disabled="true"]:active {
+    transform: none;
+    box-shadow: none;
+    background: #b9c3cf;
+}
+
+/* Shine animation */
+.project-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+    transform: skewX(-20deg);
+}
+
+.project-btn:hover::after {
+    animation: btnShine 0.8s ease forwards;
+}
+
+.project-btn.disabled::after,
+.project-btn[aria-disabled="true"]::after {
+    display: none; /* no shine for disabled */
+}
+
+@keyframes btnShine {
+    0% { left: -150%; }
+    100% { left: 150%; }
+}
+
 .author-info h4 {
     font-size: 18px;
     color: var(--dark-color);
@@ -860,6 +1116,7 @@ author-info p {
     background: var(--primary-color);
     z-index: 1;
     opacity: 0.8;
+    pointer-events: none;
 }
 
 
@@ -963,6 +1220,8 @@ author-info p {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    position: relative;
+    z-index: 2; /* ensure above pseudo-elements */
 }
 
 .project-card p {
@@ -1228,6 +1487,7 @@ author-info p {
     z-index: 1;
     opacity: 0;
     transition: opacity 0.5s ease;
+    pointer-events: none; /* do not block clicks */
 }
 
 .project-card:hover {
@@ -2215,4 +2475,223 @@ author-info p {
     .map-container {
         height: 300px;
     }
+}
+
+/* ===============================
+   Professional Theme Overrides
+   =============================== */
+
+/* Palette + base typography */
+:root {
+    --primary-color: #2563eb; /* Indigo-600 */
+    --primary-glow: rgba(37, 99, 235, 0.4);
+    --secondary-color: #06b6d4; /* Cyan-500 */
+    --secondary-glow: rgba(6, 182, 212, 0.35);
+    --dark-color: #0f172a; /* Slate-900 */
+    --light-color: #ffffff;
+    --text-color: #111827; /* Gray-900 */
+    --text-muted: #6b7280; /* Gray-500 */
+    --surface: #f8fafc; /* Slate-50 */
+    --border: #e5e7eb; /* Gray-200 */
+}
+
+body {
+    background-image: none !important;
+    background: radial-gradient(1200px 800px at 10% -10%, rgba(6, 182, 212, 0.08), transparent),
+                radial-gradient(1000px 600px at 110% 10%, rgba(37, 99, 235, 0.08), transparent),
+                #ffffff;
+    color: var(--text-color);
+}
+
+header {
+    background: rgba(255, 255, 255, 0.82);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-menu li a {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.nav-menu li a:hover {
+    color: var(--primary-color);
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: var(--dark-color);
+    text-shadow: none;
+}
+
+.about-content,
+.about-text {
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+.specialties-list li {
+    background: #ffffff;
+    border: 1px solid var(--border);
+}
+
+/* Cards and grids polish */
+.team-member,
+.project-card,
+.contact-card {
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+/* Project cards entrance animation (used by script.js) */
+.projects-grid .project-card {
+    opacity: 1; /* visible by default */
+    transform: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Testimonial carousel controls */
+.testimonial-controls {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.testimonial-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-color);
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+    transition: all 0.2s ease;
+}
+
+.testimonial-btn:hover {
+    transform: translateY(-1px);
+    border-color: var(--primary-color);
+    color: #ffffff;
+    background: var(--primary-color);
+}
+
+.testimonial-indicators {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.testimonial-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    transition: all 0.2s ease;
+}
+
+.testimonial-indicator.active {
+    width: 22px;
+    background: var(--primary-color);
+}
+
+/* Center testimonials */
+.testimonials-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial-card {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.testimonial-content { 
+    align-items: center;
+}
+
+/* Buttons */
+.btn-submit {
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 12px 22px rgba(37, 99, 235, 0.25);
+}
+
+.btn-submit:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+}
+
+/* Footer polish */
+.footer {
+    border-top: 1px solid var(--border);
+}
+
+.footer-bottom {
+    background: #ffffff;
+}
+
+/* Mobile polish */
+@media (max-width: 768px) {
+    .section { padding: 64px 0; }
+    .section-title { font-size: 26px; }
+}
+
+/* ===============================
+   Background Enhancements (Global)
+   - Subtle grid overlay + animated gradient blobs
+   =============================== */
+
+/* Clean background without dotted/grid overlay */
+body {
+    background-image:
+        radial-gradient(1200px 800px at 10% -10%, rgba(6, 182, 212, 0.08), transparent),
+        radial-gradient(1000px 600px at 110% 10%, rgba(37, 99, 235, 0.08), transparent),
+        #ffffff;
+}
+
+/* Animated color blobs behind content (keeps LED bar on body::before intact) */
+body::after {
+    content: '';
+    position: fixed;
+    inset: -20% -10% -10% -10%;
+    z-index: -2;
+    pointer-events: none;
+    background:
+        radial-gradient(40rem 30rem at 15% 15%, rgba(37, 99, 235, 0.18), transparent 60%),
+        radial-gradient(35rem 28rem at 85% 10%, rgba(6, 182, 212, 0.18), transparent 60%),
+        radial-gradient(45rem 40rem at 50% 110%, rgba(37, 99, 235, 0.12), transparent 65%);
+    filter: blur(60px);
+    opacity: 0.55;
+    animation: floatBlobs 28s ease-in-out infinite alternate;
+}
+
+@keyframes floatBlobs {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(0, -10px, 0) scale(1.02); opacity: 0.6; }
+    100% { transform: translate3d(0, -18px, 0) scale(1.04); opacity: 0.65; }
+}
+
+/* Alternate subtle section backgrounds for depth */
+.section:nth-of-type(even) {
+    background:
+        linear-gradient(180deg, rgba(6, 182, 212, 0.06), rgba(37, 99, 235, 0.06));
+}
+
+/* Ensure inner content stays readable on tinted backgrounds */
+.section:nth-of-type(even) .section-container {
+    backdrop-filter: saturate(140%) blur(2px);
 }
