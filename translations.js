@@ -26,9 +26,9 @@ const translations = {
         "joao_position": "COO",
         "joao_bio": "Responsável por transformar visão em operação com foco em inovação, performance e crescimento sustentável.",
         "felipe_position": "Desenvolvedor Front-end",
-        "felipe_bio": "Especialista em UI/UX, Felipe traz criatividade e elegância para cada projeto front-end que desenvolve, transformando ideias em experiências visuais cativantes.",
+        "felipe_bio": "Como Desenvolvedor Front-end e Especialista em UI/UX, Felipe colabora para dar vida a ideias, aplicando criatividade e elegância em cada projeto. Seu foco é desenvolver experiências de usuário que não apenas sejam visualmente atraentes, mas também altamente funcionais",
         "bruno_position": "Desenvolvedor Back-end",
-        "bruno_bio": "Arquiteto de soluções, Bruno constroi o coração pulsante de sistemas, garantindo performance,escabilidade e segurança.",
+        "bruno_bio": "Um backend é a parte de um sistema que fica por trás das telas, responsável por processar dados, executar regras de negócio e se comunicar com bancos de dados e outros serviços. Arquiteto de soluções, Bruno constrói o coração pulsante de sistemas, garantindo performance, escalabilidade e segurança.",
         
         // Projects section
         "projects_title": "Nossos Projetos",
@@ -114,9 +114,9 @@ const translations = {
         "joao_position": "COO",
         "joao_bio": "Responsable de transformar la visión en operación con enfoque en innovación, rendimiento y crecimiento sostenible.",
         "felipe_position": "Desarrollador Front-end",
-        "felipe_bio": "Especialista en UI/UX, Felipe aporta creatividad y elegancia a cada proyecto front-end que desarrolla, transformando ideas en experiencias visuales cautivadoras.",
+        "felipe_bio": "Como Desarrollador Front-end y Especialista en UI/UX, Felipe colabora para dar vida a las ideas, aplicando creatividad y elegancia en cada proyecto. Su enfoque es desarrollar experiencias de usuario que no solo sean visualmente atractivas, sino también altamente funcionales.",
         "bruno_position": "Desarrollador Back-end",
-        "bruno_bio": "Arquitecto de soluciones, Bruno construye el corazón pulsante de sistemas, garantizando rendimiento, escalabilidad y seguridad.",
+        "bruno_bio": "Un backend es la parte de un sistema que se encuentra detrás de las pantallas, responsable de procesar datos, ejecutar reglas de negocio y comunicarse con bases de datos y otros servicios. Arquitecto de soluciones, Bruno construye el corazón palpitante de los sistemas, garantizando rendimiento, escalabilidad y seguridad.",
         
         // Projects section
         "projects_title": "Nuestros Proyectos",
@@ -202,9 +202,9 @@ const translations = {
         "joao_position": "COO",
         "joao_bio": "Responsible for transforming vision into operation with a focus on innovation, performance, and sustainable growth.",
         "felipe_position": "Front-end Developer",
-        "felipe_bio": "UI/UX specialist, Felipe brings creativity and elegance to every front-end project he develops, transforming ideas into captivating visual experiences.",
+        "felipe_bio": "As a Front-end Developer and UI/UX Specialist, Felipe collaborates to bring ideas to life, applying creativity and elegance to each project. His focus is on developing user experiences that are not only visually appealing but also highly functional!",
         "bruno_position": "Back-end Developer",
-        "bruno_bio": "Solutions architect, Bruno builds the beating heart of systems, ensuring performance, scalability, and security.",
+        "bruno_bio": "A backend is the part of a system that operates behind the scenes, responsible for processing data, executing business rules, and communicating with databases and other services. Solutions architect, Bruno builds the pulsating heart of systems, ensuring performance, scalability, and security.",
         
         // Projects section
         "projects_title": "Our Projects",
