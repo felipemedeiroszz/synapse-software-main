@@ -1,7 +1,10 @@
 // JavaScript for language selection and navigation functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar partículas flutuantes
-    initParticles();
+    // Inicializar partículas flutuantes (respeita preferências de redução de movimento)
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+        initParticles();
+    }
     
     console.log('Página carregada com sucesso!');
     
@@ -32,6 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 hamburgerMenu.classList.remove('active');
                 navMenu.classList.remove('active');
             }
+
+    // Header shadow on scroll
+    const headerEl = document.querySelector('header');
+    const toggleHeaderShadow = () => {
+        if (!headerEl) return;
+        if (window.scrollY > 10) headerEl.classList.add('scrolled');
+        else headerEl.classList.remove('scrolled');
+    };
+    toggleHeaderShadow();
+    window.addEventListener('scroll', toggleHeaderShadow, { passive: true });
         });
     }
     
@@ -188,6 +201,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Código para a seção de projetos
     const projectCards = document.querySelectorAll('.project-card');
     
+    // Intercept denied buttons (access restricted)
+    document.querySelectorAll('.project-btn[data-denied="true"]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = (window.currentLanguage || 'pt');
+            const dict = (window.translations && window.translations[lang]) ? window.translations[lang] : {};
+            const msg = dict['access_denied'] || 'Acesso negado.';
+            alert(msg);
+        });
+    });
+    
     // Função para verificar se o elemento está visível na viewport
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
@@ -209,6 +233,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    // Executar animação de projetos no carregamento e em eventos de rolagem/redimensionamento
+    animateProjectCards();
+    window.addEventListener('scroll', animateProjectCards, { passive: true });
+    window.addEventListener('resize', animateProjectCards);
     
 });
 
