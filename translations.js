@@ -26,7 +26,7 @@ const translations = {
         "joao_position": "COO",
         "joao_bio": "Responsável por transformar visão em operação com foco em inovação, performance e crescimento sustentável.",
         "felipe_position": "Desenvolvedor Front-end",
-        "felipe_bio": "Como Desenvolvedor Front-end e Especialista em UI/UX, Felipe colabora para dar vida a ideias, aplicando criatividade e elegância em cada projeto. Seu foco é desenvolver experiências de usuário que não apenas sejam visualmente atraentes, mas também altamente funcionais",
+        "felipe_bio": "Como Desenvolvedor Front-end e Especialista em UI/UX, Felipe colabora para dar vida a ideias, aplicando criatividade e elegância em cada projeto. Seu foco é desenvolver experiências de usuário que não apenas sejam visualmente atraentes, mas também altamente funcionais!",
         "bruno_position": "Desenvolvedor Back-end",
         "bruno_bio": "Um backend é a parte de um sistema que fica por trás das telas, responsável por processar dados, executar regras de negócio e se comunicar com bancos de dados e outros serviços. Arquiteto de soluções, Bruno constrói o coração pulsante de sistemas, garantindo performance, escalabilidade e segurança.",
         
