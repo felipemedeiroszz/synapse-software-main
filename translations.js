@@ -27,8 +27,6 @@ const translations = {
         "joao_bio": "Responsável por transformar visão em operação com foco em inovação, performance e crescimento sustentável.",
         "felipe_position": "Desenvolvedor Front-end",
         "felipe_bio": "Como Desenvolvedor Front-end e Especialista em UI/UX, Felipe colabora para dar vida a ideias, aplicando criatividade e elegância em cada projeto. Seu foco é desenvolver experiências de usuário que não apenas sejam visualmente atraentes, mas também altamente funcionais!",
-        "bruno_position": "Desenvolvedor Back-end",
-        "bruno_bio": "Um backend é a parte de um sistema que fica por trás das telas, responsável por processar dados, executar regras de negócio e se comunicar com bancos de dados e outros serviços. Arquiteto de soluções, Bruno constrói o coração pulsante de sistemas, garantindo performance, escalabilidade e segurança.",
         
         // Projects section
         "projects_title": "Nossos Projetos",
@@ -83,7 +81,7 @@ const translations = {
         "service_optimization": "Otimização de Decisões",
         "service_frontend": "Desenvolvimento Front-End",
         "service_backend": "Desenvolvimento Back-End",
-        "copyright": "© 2025 Synapse. Todos os direitos reservados.",
+        "copyright": " 2025 Synapse. Todos os direitos reservados.",
         "privacy_policy": "Política de Privacidade",
         "terms_of_use": "Termos de Uso"
     },
@@ -115,8 +113,6 @@ const translations = {
         "joao_bio": "Responsable de transformar la visión en operación con enfoque en innovación, rendimiento y crecimiento sostenible.",
         "felipe_position": "Desarrollador Front-end",
         "felipe_bio": "Como Desarrollador Front-end y Especialista en UI/UX, Felipe colabora para dar vida a las ideas, aplicando creatividad y elegancia en cada proyecto. Su enfoque es desarrollar experiencias de usuario que no solo sean visualmente atractivas, sino también altamente funcionales.",
-        "bruno_position": "Desarrollador Back-end",
-        "bruno_bio": "Un backend es la parte de un sistema que se encuentra detrás de las pantallas, responsable de procesar datos, ejecutar reglas de negocio y comunicarse con bases de datos y otros servicios. Arquitecto de soluciones, Bruno construye el corazón palpitante de los sistemas, garantizando rendimiento, escalabilidad y seguridad.",
         
         // Projects section
         "projects_title": "Nuestros Proyectos",
@@ -171,7 +167,7 @@ const translations = {
         "service_optimization": "Optimización de Decisiones",
         "service_frontend": "Desarrollo Front-End",
         "service_backend": "Desarrollo Back-End",
-        "copyright": "© 2025 Synapse. Todos los derechos reservados.",
+        "copyright": " 2025 Synapse. Todos los derechos reservados.",
         "privacy_policy": "Política de Privacidad",
         "terms_of_use": "Términos de Uso"
     },
@@ -203,8 +199,6 @@ const translations = {
         "joao_bio": "Responsible for transforming vision into operation with a focus on innovation, performance, and sustainable growth.",
         "felipe_position": "Front-end Developer",
         "felipe_bio": "As a Front-end Developer and UI/UX Specialist, Felipe collaborates to bring ideas to life, applying creativity and elegance to each project. His focus is on developing user experiences that are not only visually appealing but also highly functional!",
-        "bruno_position": "Back-end Developer",
-        "bruno_bio": "A backend is the part of a system that operates behind the scenes, responsible for processing data, executing business rules, and communicating with databases and other services. Solutions architect, Bruno builds the pulsating heart of systems, ensuring performance, scalability, and security.",
         
         // Projects section
         "projects_title": "Our Projects",
@@ -322,7 +316,7 @@ function translatePage(lang) {
     document.querySelector('#equipe .section-title').textContent = translations[lang]['team_title'];
     
     const teamMembers = document.querySelectorAll('.team-member');
-    if (teamMembers.length >= 5) {
+    if (teamMembers.length >= 4) {
         // Rogerio
         teamMembers[0].querySelector('.member-position').textContent = translations[lang]['rogerio_position'];
         teamMembers[0].querySelector('.member-bio').textContent = translations[lang]['rogerio_bio'];
@@ -338,10 +332,6 @@ function translatePage(lang) {
         // Felipe
         teamMembers[3].querySelector('.member-position').textContent = translations[lang]['felipe_position'];
         teamMembers[3].querySelector('.member-bio').textContent = translations[lang]['felipe_bio'];
-        
-        // Bruno
-        teamMembers[4].querySelector('.member-position').textContent = translations[lang]['bruno_position'];
-        teamMembers[4].querySelector('.member-bio').textContent = translations[lang]['bruno_bio'];
     }
     
     // Update projects section
